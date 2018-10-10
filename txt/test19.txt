@@ -1,0 +1,14 @@
+pyplot.subplotはグラフだけじゃなく、図でも使用可能
+
+plt.subplot(1, 2, 1)
+で描画領域を指定したあと、
+plt.imshow(img)
+で描画してやれば良い。
+
+その後、
+plt.subplot(1, 2, 2)
+plt.imshow(img2)
+でもう一方にも描画したら、
+最終的に
+plt.show()
+で画面に表示する。
