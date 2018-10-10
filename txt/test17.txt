@@ -1,0 +1,18 @@
+pyplotでのグラフ作成の応用
+
+前回までの内容と同じ
+plt.plot(x, y_sin)
+plt.plot(x, y_cos)
+
+x軸y軸のlabelをつける(.xlabel .ylabel)
+plt.xlabel('x axis label')
+plt.ylabel('y axis label')
+
+グラフのタイトルをつける(.title)
+plt.title('Sine and Cosine')
+
+描画した線に名前をつける(.title)
+plt.legend(['Sine', 'Cosine'])
+
+グラフを表示する
+plt.show()
