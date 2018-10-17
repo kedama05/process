@@ -1,0 +1,131 @@
+Tiny Object
+
+
+[01]
+選択的探索[210、209]によって与えられる検出提案に基づく物体検出の成功は、
+大きな関心を集めている[21,7,3,33,254,50,105,144]。
+
+    21. Carreira J., Sminchisescu C. (2012) CMPC: Automatic object segmentation
+        using constrained parametric mincuts. IEEE TPAMI 34(7):1312–1328 16
+        CMPC: 制約付きパラメトリックミニカットを使用した自動オブジェクトセグメンテーション
+
+    7.  Arbelaez P., Pont-Tuset J., Barron J., Marques F., Malik J. (2014) Multi- ´
+        scale combinatorial grouping. In: CVPR, pp. 328–335 16, 17
+        マルチスケールコンビナトリアルグルーピング
+
+    3.  Alexe B., Deselaers T., Ferrari V. (2012) Measuring the objectness of
+        image windows. IEEE TPAMI 34(11):2189–2202 16
+        画像ウィンドウのオブジェクト性の測定
+
+    33. Cheng M., Zhang Z., Lin W., Torr P. (2014) BING: Binarized normed
+        gradients for objectness estimation at 300fps. In: CVPR, pp. 3286–3293 16
+        BING: 300fpsでの物体推定のための二値化された標準勾配。
+
+    254.Zitnick C., Dollar P. (2014) Edge boxes: Locating object proposals from ´
+        edges. In: ECCV, pp. 391–405 16, 17
+        エッジボックス：エッジからオブジェクト提案を見つける。
+
+    50. Endres I., Hoiem D. (2010) Category independent object proposals 16
+        カテゴリ独立オブジェクト提案
+
+    105.Krahenb ¨ uhl1 P., Koltun V. (2014) Geodesic object proposals. In: ECCV ¨ 16
+        測地線オブジェクトの提案。
+
+    144.Manen S., Guillaumin M., Van Gool L. (2013) Prime object proposals
+        with randomized prim’s algorithm. In: CVPR, pp. 2536–2543 16
+        ランダム化プリムアルゴリズムによるプライムオブジェクト提案
+
+
+
+[02]
+広範囲のスケール変動のもとで物体を検出し、
+特に非常に小さな物体を検出すること は、
+→   重要な課題の1つとして際立っている。
+
+画像の解像度は
+→   検出精度に大きな影響を与えることが示されている[96,136]
+
+したがって、高分解能入力は小さな物体が検出される可能性を大きくするため、
+→   これらのデータ拡大トリックの中では
+     スケーリング（特に高解像度入力）が主に使用されます[96]。
+
+    96. Huang J., Rathod V., Sun C., Zhu M., Korattikara A., Fathi A., Fischer I.,
+        Wojna Z., Song Y., Guadarrama S., Murphy K. (2017) Speed/accuracy
+        trade-offs for modern convolutional object detectors 11, 19, 23
+        最新の畳み込みオブジェクト検出器の速度/精度のトレードオフ
+
+
+
+
+[03]
+COCO [129]上で最良の検出器[164]（80クラスを検出するように訓練されただけ）のmAPは、
+0.5 IoUにおいてさえ73％に達し、
+オブジェクト検出が画像分類よりもはるかに困難であるかを明確に示している。
+
+    164.    Peng C., Xiao T., Li Z., Jiang Y., Zhang X., Jia K., Yu G., Sun J. (2018)
+            MegDet: A large minibatch object detector. In: CVPR 20, 23
+            MegDet: 大きなミニバッチオブジェクト検出器。
+
+
+
+
+[04]
+文脈情報（オブジェクト関係、グローバルシーン統計）は、
+    特にオブジェクトが小さくて隠れているか、画質が悪い場合に、
+    
+    →   オブジェクトの検出と認識に役立つことが認識されている[155]。
+
+    155.    Oliva A., Torralba A. (2007) The role of context in object recognition.
+            Trends in cognitive sciences 11(12):520–527 15, 24
+            物体認識における文脈の役割。
+
+
+
+
+
+
+
+
+Other
+
+COCOにはいくつかの新しい課題がありました。
+    （1）小さなパーツの高いパーセンテージ（例えば、画像領域[192]の1％未満）
+        を含む広範囲のスケールのオブジェクトを含む。
+
+    （2）オブジェクトが象徴的でなく、混乱や重い閉塞の中にある。
+
+    （3）評価メトリック（表9を参照）は、
+        より正確なオブジェクトのローカリゼーションを促進する。
+
+
+
+図1および図17は、
+    PASCAL VOC、ILSVRCおよびMSCOCOの課題の最良の検出結果をまとめた
+    最先端技術の概要を示しています。
+
+    図17
+
+        Mask RCNN(ResNeXt+FPN)が最も高くなっている。
+            @IoU[0.5 0.95]  0.72
+            @IoU0.5         0.50
+
+
+        COCOにおけるオブジェクト検出性能の進化（Test-Dev結果）。
+        結果はそれに応じて[64、80、176]から引用される。
+        バックボーンネットワーク、検出フレームワークの設計、
+        良好で大規模なデータセットの可用性は、検出の3つの最も重要な要素です。
+
+
+ジェネリックオブジェクト検出における大きな成功の要因の1つは、
+    領域ベースおよび1状態検出器の両方で、より優れた検出フレームワークの開発
+        領域ベース（RCNN [65]、Fast RCNN [64]、FasterRCNN [175]、マスクRCNN [80]）
+        1状態検出器（YOLO [174]、SSD [136]）
+
+        
+    領域ベースの検出器は
+        最高精度を有するが、
+        組み込みシステムまたはリアルタイムシステムには計算量が多すぎる。
+
+    1ステージ検出器は、
+        より高速で簡単な可能性を秘めていますが、
+        まだ領域ベースの検出器の精度には達していません。
