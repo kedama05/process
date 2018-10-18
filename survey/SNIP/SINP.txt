@@ -1,0 +1,87 @@
+An Analysis of Scale Invariance in Object Detection – SNIP
+Bharat Singh, Larry S. Davis
+
+Abstract
+1. Introduction
+2. Related Work
+3. Image Classification at Multiple Scales
+4. Background
+5. Data Variation or Correct Scale?
+6. Object Detection on an Image Pyramid
+    6.1. Scale Normalization for Image Pyramids
+    6.2. Sampling Sub-Images
+7. Datasets and Evaluation
+    7.1. Training Details
+    7.2. Improving RPN
+    7.3. Experiments
+8. Conclusion
+
+
+Abstract
+    極端なスケール変化のもとで物体を認識し検出するための様々な技術の分析が提示される。
+
+    検出器のスケール固有およびスケール不変設計
+        異なる入力データ構成でそれらを訓練することによって比較される
+
+    ImageNet上の小さなオブジェクトを分類するための
+        異なるネットワーク・アーキテクチャーのパフォーマンスを評価することにより、
+        CNNが規模の変化に強くないことを示している
+
+    この分析に基づいて、
+        イメージピラミッドの同じスケールで検出器を訓練し、テストすることを提案する。
+
+    小さな物体と大きい物体はそれぞれ
+    より小さいスケールと大きいスケールで認識することが困難であるため、
+        画像スケールの関数として異なるサイズの物体インスタンスの勾配を
+        選択的に逆伝播する
+        Scale Normalization for Image Pyramids(SNIP)と呼ばれる新しい訓練方式を提示する。
+
+    COCOデータセットでは、
+        単一モデルのパフォーマンスは45.7％、
+        3つのネットワークのアンサンブルは48.3％のmAPを取得します。
+
+    既製品のImageNet-1000の事前訓練を受けたモデルを使用し、
+    バウンディングボックスの監督のもとでトレーニングを行う
+
+    COCO2017の挑戦の中で最優秀学生応募作品を獲得した。
+
+    コードは http://bit.ly/2yXVg4c から入手できる
+
+
+1. Introduction
+2. Related Work
+
+
+3. Image Classification at Multiple Scales
+
+4. Background
+
+5. Data Variation or Correct Scale?
+
+6. Object Detection on an Image Pyramid
+    6.1. Scale Normalization for Image Pyramids
+    6.2. Sampling Sub-Images
+
+7. Datasets and Evaluation
+    7.1. Training Details
+    7.2. Improving RPN
+    7.3. Experiments
+
+8. Conclusion
+    我々は、
+        現在の物体検出訓練パイプラインの欠点を露呈させた、極端なスケール変化のもとで
+        物体を認識し検出するための様々な技術の分析を提示した。
+
+    この分析に基づいて、
+        訓練に参加するオブジェクトインスタンスの広範囲のスペクトルに対処し、
+        事前訓練された分類ネットワークのドメインシフトを低減するための
+        訓練スキーム（SNIP）が提案された。
+
+    COCOデータセットに関する実験結果は、
+        物体検出におけるスケールおよび画像ピラミッドの重要性を実証した。
+
+    高解像度画像では
+        大きなオブジェクトの勾配を逆伝播する必要がないので、
+        画像のかなりの部分で実行される計算を減らすことができる
+
+    私たちは将来の仕事でこの方向性を探求したいと考えています。

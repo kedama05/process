@@ -1,0 +1,3 @@
+[DL輪読会]An Analysis of Scale Invariance in Object Detection - SNIP
+https://www.slideshare.net/DeepLearningJP2016/dlan-analysis-of-scale-invariance-in-object-detection-snip
+

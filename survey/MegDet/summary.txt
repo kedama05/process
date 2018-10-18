@@ -1,4 +1,5 @@
 MegDet: A Large Mini-Batch Object Detector
+Chao Peng, Tete Xiao, Zeming Li Yuning Jiang, Xiangyu Zhang, Kai Jia, Gang Yu, Jian Sun
 
 Abstract
 1. Introduction
@@ -417,3 +418,5 @@ Abstract
         研究サイクルが大幅に加速されたために顕著
 
     その結果、COCO2017検出の課題の1位を獲得した
+
+
