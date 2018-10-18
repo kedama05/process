@@ -1,0 +1,156 @@
+MegDet: A Large Mini-Batch Object Detector
+
+Abstract
+1. Introduction
+2. Related Work
+3. Approach
+    3.1. Problems with Small Mini-Batch Size
+    3.2. Learning Rate for Large Mini-Batch
+    3.3. Cross-GPU Batch Normalizatio
+4. Experiments
+    4.1. Large mini-batch size, no BN
+    4.2. Large mini-batch size, with CGBN
+5. Concluding Remark
+Appendix
+
+
+
+Abstract
+本稿では、
+    大規模ミニバッチオブジェクト検出器（MegDet）を提案
+        最大256個のミニバッチサイズで最大128個のGPUを効果的に利用
+        →   トレーニング時間を大幅に短縮
+
+技術的提案
+    warmup learning rate policy (ウォームアップ学習率ポリシー)
+    Cross-GPU Batch Normalization (Cross-GPU バッチ正規化)
+
+成果
+    COCO2017チャレンジで第1位の検出タスクを獲得 （mmAP 52.5％）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
