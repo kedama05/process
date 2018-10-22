@@ -1,4 +1,40 @@
 Mask R-CNN
+<<<<<<< HEAD
+=======
+Kaiming He, Georgia Gkioxari, Piotr Dollar, Ross Girshick
+https://arxiv.org/pdf/1703.06870.pdf
+
+Abstract
+1. Introduction
+2. Related Work
+3. Mask R-CNN
+    3.1. Implementation Details
+        Training: 
+        Inference:
+4. Experiments: Instance Segmentation
+    4.1. Main Results
+    4.2. Ablation Experiments
+        Architecture:
+        Multinomial vs. Independent Masks:
+        Class-Specific vs. Class-Agnostic Masks:
+        RoIAlign:
+        Mask Branch:
+    4.3. Bounding Box Detection Results
+    4.4. Timing
+        Inference:
+        Training:
+5. Mask R-CNN for Human Pose Estimation
+    Implementation Details:
+    Main Results and Ablations:
+Appendix A: Experiments on Cityscapes
+    Implementation:
+    Results:
+Appendix B: Enhanced Results on COCO
+    Instance Segmentation and Object Detection
+    Keypoint Detection
+        Acknowledgements:
+
+>>>>>>> efcbdf823e176258c53df43bbcc158967a60b659
 
 Abstract
     我々は、
@@ -10,13 +46,19 @@ Abstract
         各インスタンスに対して高品質のセグメンテーションマスクを生成する。
 
     Mask R-CNNと呼ばれるこの方法は、
+<<<<<<< HEAD
         バウンディングボックス認識のために既存のブランチと並行して
+=======
+        バウンディングボックス認識のために
+        既存のブランチと並行して
+>>>>>>> efcbdf823e176258c53df43bbcc158967a60b659
         オブジェクトマスクを予測するためのブランチを追加することによって
         高速R-CNNを拡張する。
 
     マスクR-CNNはトレーニングが簡単で、
         5fpsで動作する高速R-CNNにわずかなオーバーヘッドしか追加しません。
 
+<<<<<<< HEAD
     さらに、マスクR-CNNは、
         例えば、同じフレームワーク内の人間のポーズを推定することを可能にするなど、
         他のタスクに一般化することは容易である。
@@ -411,3 +453,52 @@ Instance Segmentation and Object Detection
 
 
 
+=======
+    さらに、マスクR-CNNは、例えば、
+        同じフレームワーク内の人間のポーズを推定することを可能にするなど、
+        他のタスクに一般化することは容易である。
+
+        インスタンスのセグメンテーション、バウンディングボックス
+        オブジェクト検出、および人物のキーポイント検出が含まれます。
+
+    ベルとホイッスルがなければ、
+        マスクR-CNNは、COCO 2016の挑戦受賞者を含む
+        すべてのタスクの既存のすべてのシングルモデルエントリーよりも優れています。
+
+    私たちは、
+        シンプルで効果的なアプローチが確実なベースラインとして役立ち、
+        インスタンスレベルの認識で将来の研究を容易にすることを願っています。
+
+    コードは
+        https://github.com/facebookresearch/Detectron
+    で利用可能になっています。
+
+1. Introduction
+2. Related Work
+3. Mask R-CNN
+    3.1. Implementation Details
+        Training: 
+        Inference:
+4. Experiments: Instance Segmentation
+    4.1. Main Results
+    4.2. Ablation Experiments
+        Architecture:
+        Multinomial vs. Independent Masks:
+        Class-Specific vs. Class-Agnostic Masks:
+        RoIAlign:
+        Mask Branch:
+    4.3. Bounding Box Detection Results
+    4.4. Timing
+        Inference:
+        Training:
+5. Mask R-CNN for Human Pose Estimation
+    Implementation Details:
+    Main Results and Ablations:
+Appendix A: Experiments on Cityscapes
+    Implementation:
+    Results:
+Appendix B: Enhanced Results on COCO
+    Instance Segmentation and Object Detection
+    Keypoint Detection
+        Acknowledgements:
+>>>>>>> efcbdf823e176258c53df43bbcc158967a60b659
