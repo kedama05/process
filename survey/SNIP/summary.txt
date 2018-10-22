@@ -1,3 +1,59 @@
+An Analysis of Scale Invariance in Object Detection – SNIP
+Bharat Singh, Larry S. Davis
+
+Abstract
+1. Introduction
+2. Related Work
+3. Image Classification at Multiple Scales
+4. Background
+5. Data Variation or Correct Scale?
+6. Object Detection on an Image Pyramid
+    6.1. Scale Normalization for Image Pyramids
+    6.2. Sampling Sub-Images
+7. Datasets and Evaluation
+    7.1. Training Details
+    7.2. Improving RPN
+    7.3. Experiments
+8. Conclusion
+
+
 [DL輪読会]An Analysis of Scale Invariance in Object Detection - SNIP
 https://www.slideshare.net/DeepLearningJP2016/dlan-analysis-of-scale-invariance-in-object-detection-snip
 
+
+
+手法:SNIP
+    どうすれば良いか？
+        極端に大きいもの、小さいものは抜く
+        なるべく多くのサンプルを使えるようにする
+    解決策
+        MSTをベースに拡大・縮小した上で、
+        ROIがある一定の範囲内にある時のみ、学習や推論時に使う。
+        
+        1400x2000pxではROIの1辺が0~80pxのもののみ使用
+        800x1200pxではROIの1辺が40~160pxのもののみ使用
+        480x800pxではROIの1辺が 120px~のもののみ使用
+
+
+データセット
+    COCOのtrain用画像123,000を118,000のtrainと5,000のtestに分けて使用
+結果1
+    特に低解像度の物体に対する検知の精度が向上
+
+
+
+Q 小さい物体に対して、アップサンプルした画像を使って分類等を行っているが意味はある？
+A ある！わざわざ低解像度の物体用に分類器を設計しなおさなくても良い！
+
+Q ファインチューニングする際に使う物体の解像度を制限する必要はある？
+A ある！制限すると精度が上がる！
+
+本研究の有用性はどこ？ 
+SNIPという学習の方法を使うことで、
+学習済み分類器から転移学習するとき、
+データに含まれる物体のスケールの差による domein-shiftを減少
+
+本研究は今後、どのように発展し得る？
+高解像度の際、大きな物体については学習しなくて良いので
+計算にかかるコストを減らせるかもしれない
+大きい物体は使わない

@@ -318,7 +318,7 @@ Abstract
         backbone network: ImageNet [8]
         detection framework: Feature Pyramid Network(FPN) [23]
     
-        118,000以上のトレーニング画像で検出器を訓練し、5000個の検証画像で評価
+        118,000のトレーニング画像で検出器を訓練し、5000個の検証画像で評価
     
         慣性項(momentum) 0.9のSGD optimizerを使用し、重量減少0.0001を採用します。
         ミニバッチサイズ16の基本学習率: 0.02
